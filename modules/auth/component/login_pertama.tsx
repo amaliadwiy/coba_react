@@ -1,14 +1,21 @@
+import {Button, ButtonText} from '@gluestack-ui/themed';
 import React from 'react';
-import {Button, Text} from 'react-native';
+import {Text} from 'react-native';
 
 export default function LoginPertama({navigation}: any) {
   return (
     <>
-      <Text>Login nope/google</Text>
+      <Text>Login</Text>
       <Button
-        onPress={() => navigation.navigate('LoginNope')}
-        title="Login dengan phone"
-      />
+        size="md"
+        variant="solid"
+        action="primary"
+        onPress={() => navigation.navigate('LoginNope')}>
+        <ButtonText>Login dengan Phone </ButtonText>
+      </Button>
+      <Button size="md" variant="solid" action="negative">
+        <ButtonText>Google</ButtonText>
+      </Button>
     </>
   );
 }
