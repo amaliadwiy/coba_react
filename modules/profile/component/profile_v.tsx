@@ -6,7 +6,7 @@ function ProfileScreen({navigation}: any) {
     <>
       <Text>Profile nya</Text>
       <Button
-        onPress={() => navigation.navigate('SettingUser')}
+        onPress={() => navigation.navigate('SettingUser', {showLogout: true})}
         title="Go to Settinga"
       />
     </>

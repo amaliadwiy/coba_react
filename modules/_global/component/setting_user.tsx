@@ -1,6 +1,16 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Button, Text} from 'react-native';
 
-export default function SettingUser() {
-  return <Text>Setting User</Text>;
+export default function SettingUser({route}: any) {
+  const {showLogout} = route.params;
+  return (
+    <>
+      <Text>Setting User {JSON.stringify(showLogout)}</Text>
+      {JSON.stringify(showLogout) === 'true' ? (
+        <Button title="Logout" />
+      ) : (
+        <></>
+      )}
+    </>
+  );
 }

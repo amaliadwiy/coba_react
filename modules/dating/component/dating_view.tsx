@@ -1,8 +1,8 @@
 import React, {useMemo, useState} from 'react';
-import {Button, ImageBackground, Text, View} from 'react-native';
+import {Button, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import TinderCard from 'react-tinder-card';
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     display: 'flex',
     alignItems: 'center',
@@ -53,7 +53,7 @@ const styles = {
     display: 'flex',
     zIndex: -100,
   },
-};
+});
 
 const db = [
   {
@@ -123,7 +123,7 @@ export default function DatingView({navigation}: any) {
     <>
       <Text>DatingView nya</Text>
       <Button
-        onPress={() => navigation.navigate('SettingUser')}
+        onPress={() => navigation.navigate('SettingUser', {showLogout: false})}
         title="Go to Settinga"
       />
 
