@@ -15,6 +15,7 @@
     "@gluestack-ui/config": "^1.1.12",
     "@gluestack-ui/themed": "^1.1.9",
     "@legendapp/motion": "latest",
+    "@ptomasroos/react-native-multi-slider": "^2.2.2",
     "@react-navigation/bottom-tabs": "^6.5.16",
     "@react-navigation/native": "^6.1.14",
     "@react-navigation/native-stack": "^6.9.22",
