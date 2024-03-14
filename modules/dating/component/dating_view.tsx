@@ -1,5 +1,6 @@
 import React, {useMemo, useState} from 'react';
 import {Button, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import Modal from 'react-native-modal';
 import TinderCard from 'react-tinder-card';
 
 const styles = StyleSheet.create({
@@ -85,6 +86,9 @@ export default function DatingView({navigation}: any) {
   const [characters, setCharacters] = useState(db);
   const [lastDirection, setLastDirection] = useState();
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const handleModal = () => setIsModalVisible(() => !isModalVisible);
+
   const childRefs = useMemo(
     () =>
       Array(db.length)
@@ -126,6 +130,14 @@ export default function DatingView({navigation}: any) {
         onPress={() => navigation.navigate('SettingUser', {showLogout: false})}
         title="Go to Settinga"
       />
+
+      <Button title="PopUp Modal Langganan" onPress={handleModal} />
+      <Modal isVisible={isModalVisible} coverScreen={true}>
+        <View style={{flex: 1, backgroundColor: 'white'}}>
+          <Text>Hello!</Text>
+          <Button title="Hide modal" onPress={handleModal} />
+        </View>
+      </Modal>
 
       <View style={styles.container}>
         <Text style={styles.header}>React Native Tinder Card</Text>
